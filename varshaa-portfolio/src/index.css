@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::selection { background: rgba(59,130,246,.35); }
+html, body, #root { height: 100%; }
+
+/* Background gradients */
+.gradient {
+  background: radial-gradient(1200px 600px at 10% -10%, rgba(59,130,246,.25), transparent 50%),
+              radial-gradient(800px 400px at 90% 10%, rgba(236,72,153,.25), transparent 50%);
+}
+
+/* Card styles */
+.card {
+  @apply rounded-2xl bg-slate-900/60 ring-1 ring-white/10 backdrop-blur transition transform;
+}
+
+/* Card hover animation */
+.card:hover {
+  @apply shadow-xl ring-1 ring-blue-400/40;
+  transform: translateY(-4px) scale(1.02);
+}
+
+/* Badge styles */
+.badge {
+  @apply inline-flex items-center rounded-full px-3 py-1 text-xs font-medium ring-1 ring-inset;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.15);
+}
+
+/* Custom animations */
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .85; }
+}
+.animate-pulse-slow {
+  animation: pulse-slow 8s ease-in-out infinite;
+}
