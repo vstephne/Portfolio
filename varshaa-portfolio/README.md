@@ -2,31 +2,35 @@
 
 A fast, modern portfolio built with React + Vite + TailwindCSS.
 
-## Local Dev
+## Local Development
+
 ```bash
 npm install
 npm run dev
 ```
 
 ## Build
+
 ```bash
 npm run build
 ```
 
 ## Deploy to GitHub Pages
 
-1. Create a **public** repository on GitHub (e.g., `varshaa-portfolio`).
-2. Open `vite.config.js` and set:
-   ```js
-   export default defineConfig({
-     plugins: [react()],
-     base: "/varshaa-portfolio/", // <-- change to your repo name
-   });
-   ```
-3. Push code to a `main` branch.
-4. GitHub will auto-run the **Deploy to GitHub Pages** workflow.
-5. In your repo: Settings → Pages → set **Source** to **GitHub Actions** (if not already).
-6. Your site will be live at `https://<your-username>.github.io/<repo>/`.
+This site is automatically deployed to GitHub Pages from the `main` branch’s `varshaa-portfolio` directory.
+
+**Steps:**
+1. All site files are inside `varshaa-portfolio`.
+2. The repository is already configured to deploy from this folder.
+3. After pushing changes to the `main` branch, GitHub Pages will update your site at:  
+   `https://vstephne.github.io/Portfolio/`
 
 ### Custom Domain (optional)
-If you use a custom domain, set `base: "/"` and add a `CNAME` file in `public/` with your domain name.
+- To use your own domain, set `base: "/"` in `vite.config.js`.
+- Add a `CNAME` file to the `public/` folder containing your domain name.
+- Configure your domain’s DNS to point to GitHub Pages.
+
+## Notes
+
+- If you change the source folder or branch, update the Pages settings in the repository’s Settings > Pages.
+- For further customization, consult [GitHub Pages documentation](https://docs.github.com/pages).
